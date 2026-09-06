@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8c8d8">
+  <title>Happy 15th Birthday, Tahmina Nowshin 💗</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #f4a9c4;
+      --pink-deep: #e982aa;
+      --pink-soft: #fff1f6;
+      --rose-gold: #c9859e;
+      --text: #5c4050;
+      --white: rgba(255,255,255,.78);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(255,255,255,.95), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(255,194,216,.48), transparent 32%),
+        radial-gradient(circle at 50% 90%, rgba(248,184,207,.35), transparent 40%),
+        linear-gradient(135deg, #fff8fb 0%, #fde8f0 48%, #fff5f8 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(120deg, rgba(255,255,255,.3), transparent 45%, rgba(255,255,255,.2));
+      z-index: 0;
+    }
+
+    .glow {
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: rgba(255, 182, 207, .20);
+      filter: blur(70px);
+      pointer-events: none;
+      z-index: 0;
+      top: -90px;
+      right: -90px;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(920px, 92%);
+      margin: auto;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 70px 0;
+    }
+
+    .card {
+      width: 100%;
+      text-align: center;
+      padding: 58px 30px 46px;
+      border: 1px solid rgba(255,255,255,.8);
+      background: var(--white);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 34px;
+      box-shadow: 0 25px 70px rgba(174, 102, 128, .16);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 1px solid rgba(233,130,170,.12);
+      top: -145px;
+      left: -100px;
+    }
+
+    .eyebrow {
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--rose-gold);
+      margin-bottom: 13px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.02;
+      margin: 0;
+      color: #70475a;
+      font-weight: 700;
+    }
+
+    .name {
+      margin: 13px 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(28px, 5vw, 46px);
+      color: var(--pink-deep);
+    }
+
+    .date {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 17px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.76);
+      border: 1px solid rgba(233,130,170,.20);
+      color: #946276;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+
+    .photo-wrap {
+      width: 190px;
+      height: 190px;
+      margin: 0 auto 30px;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .photo-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      padding: 5px;
+      background: conic-gradient(
+        from 0deg,
+        #fff 0deg,
+        #f1a2be 80deg,
+        #fff 155deg,
+        #d98ca8 240deg,
+        #fff 315deg,
+        #f1a2be 360deg
+      );
+      animation: spin 13s linear infinite;
+      box-shadow: 0 12px 35px rgba(210, 114, 147, .20);
+    }
+
+    .photo-ring::after {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-radius: 50%;
+      background: #fff7fa;
+    }
+
+    .photo {
+      position: relative;
+      z-index: 2;
+      width: 166px;
+      height: 166px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 4px solid rgba(255,255,255,.95);
+      box-shadow: 0 10px 30px rgba(140, 72, 98, .18);
+      background: #f9d9e5;
+    }
+
+    .heart-badge {
+      position: absolute;
+      z-index: 4;
+      right: -1px;
+      bottom: 8px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.95);
+      box-shadow: 0 8px 20px rgba(141, 75, 101, .15);
+      font-size: 19px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .message {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.9;
+      color: #745666;
+    }
+
+    .dua {
+      margin: 28px auto 0;
+      max-width: 680px;
+      padding: 22px 20px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(255,255,255,.75), rgba(255,226,237,.5));
+      border: 1px solid rgba(218,132,160,.18);
+    }
+
+    .arabic {
+      font-size: clamp(20px, 3vw, 28px);
+      line-height: 1.9;
+      direction: rtl;
+      color: #714759;
+      margin: 0 0 8px;
+      font-family: serif;
+    }
+
+    .meaning {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #8a6473;
+    }
+
+    .wish-btn {
+      margin-top: 29px;
+      border: 0;
+      cursor: pointer;
+      color: white;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 23px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ed91b2, #c9859e);
+      box-shadow: 0 12px 25px rgba(201,133,158,.25);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .wish-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 16px 30px rgba(201,133,158,.32);
+    }
+
+    .wish-btn:active {
+      transform: scale(.97);
+    }
+
+    .secret {
+      max-width: 580px;
+      margin: 18px auto 0;
+      opacity: 0;
+      transform: translateY(8px);
+      max-height: 0;
+      overflow: hidden;
+      transition: all .7s ease;
+      color: #87566a;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .secret.show {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: 180px;
+    }
+
+    .signature {
+      position: absolute;
+      right: 20px;
+      bottom: 16px;
+      font-size: 10px;
+      color: rgba(111, 69, 87, .42);
+      letter-spacing: .05em;
+      user-select: none;
+    }
+
+    .petal {
+      position: fixed;
+      top: -35px;
+      z-index: 10;
+      pointer-events: none;
+      user-select: none;
+      animation: fall linear forwards;
+      will-change: transform, opacity;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translate3d(0, -30px, 0) rotate(0deg);
+        opacity: 0;
+      }
+      10% { opacity: .9; }
+      50% {
+        transform: translate3d(var(--drift), 52vh, 0) rotate(170deg);
+        opacity: .85;
+      }
+      100% {
+        transform: translate3d(calc(var(--drift) * -0.6), 110vh, 0) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 28px 0; width: 94%; }
+      .card {
+        padding: 42px 18px 45px;
+        border-radius: 26px;
+      }
+      .photo-wrap { width: 165px; height: 165px; }
+      .photo { width: 143px; height: 143px; }
+      .heart-badge { right: -3px; bottom: 5px; }
+      .message { font-size: 15px; }
+      .dua { padding: 18px 14px; }
+      .signature { right: 15px; bottom: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="glow"></div>
+
+  <main class="page">
+    <section class="card">
+      <div class="eyebrow">A little celebration of you</div>
+
+      <h1>Happy 15th Birthday</h1>
+      <div class="name">Tahmina Nowshin</div>
+
+      <div class="date">15 September · For You, With Love 💗</div>
+
+      <div class="photo-wrap">
+        <div class="photo-ring"></div>
+        <img class="photo" src="tahmina.jpg" alt="Tahmina Nowshin">
+        <div class="heart-badge">♡</div>
+      </div>
+
+      <p class="message">
+        Happy Birthday to someone who makes ordinary moments feel a little more beautiful.
+        May this new chapter of your life be filled with soft smiles, beautiful memories,
+        meaningful dreams, and all the happiness your heart deserves. 🌸
+      </p>
+
+      <div class="dua">
+        <p class="arabic">
+          بارك الله في عمرك، وأسعد أيامك، ورزقك الصحة والسعادة والبركة دائماً. آمين 🤍
+        </p>
+        <p class="meaning">
+          May Allah bless your life with happiness, wisdom, good health and endless barakah. Ameen. 🤲
+        </p>
+      </div>
+
+      <button class="wish-btn" id="wishBtn">✨ Make a Wish</button>
+
+      <div class="secret" id="secret">
+        Make a beautiful wish... 🌸<br>
+        And may every little dream in your heart find its way to you. 💗
+      </div>
+
+      <div class="signature">For You, With All My Love — Arafat</div>
+    </section>
+  </main>
+
+  <script>
+    const symbols = ["🌸", "♡", "♥", "✿"];
+
+    function createPetal(extra = false) {
+      const petal = document.createElement("span");
+      petal.className = "petal";
+      petal.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+      const size = 12 + Math.random() * 17;
+      const duration = 5 + Math.random() * 6;
+      const drift = (Math.random() * 180 - 90) + "px";
+
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.fontSize = size + "px";
+      petal.style.setProperty("--drift", drift);
+      petal.style.animationDuration = duration + "s";
+      petal.style.opacity = 0.5 + Math.random() * 0.4;
+
+      document.body.appendChild(petal);
+
+      setTimeout(() => petal.remove(), duration * 1000 + 500);
+    }
+
+    // Gentle automatic cherry-blossom/petal effect
+    setInterval(() => createPetal(), 650);
+
+    // A little extra magic when "Make a Wish" is pressed
+    document.getElementById("wishBtn").addEventListener("click", () => {
+      document.getElementById("secret").classList.add("show");
+
+      for (let i = 0; i < 28; i++) {
+        setTimeout(() => createPetal(true), i * 45);
+      }
+    });
+
+    // Small initial burst
+    for (let i = 0; i < 8; i++) {
+      setTimeout(() => createPetal(), i * 180);
+    }
+  </script>
+</body>
+</html>

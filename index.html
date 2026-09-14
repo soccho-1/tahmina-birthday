@@ -70,6 +70,7 @@
       align-items: center;
       justify-content: center;
       padding: 70px 0;
+      transition: opacity 0.5s ease;
     }
 
     .card {
@@ -236,8 +237,15 @@
       color: #8a6473;
     }
 
-    .wish-btn {
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
       margin-top: 29px;
+    }
+
+    .wish-btn {
       border: 0;
       cursor: pointer;
       color: white;
@@ -287,12 +295,13 @@
       color: rgba(111, 69, 87, .42);
       letter-spacing: .05em;
       user-select: none;
+      text-align: right;
     }
 
     .petal {
       position: fixed;
       top: -35px;
-      z-index: 10;
+      z-index: 9999;
       pointer-events: none;
       user-select: none;
       animation: fall linear forwards;
@@ -315,6 +324,52 @@
       }
     }
 
+    .gallery-page {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 17, 22, 0.95);
+      z-index: 100;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 90%;
+      height: 75vh;
+      max-width: 800px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .back-btn {
+      margin-top: 30px;
+      background: linear-gradient(135deg, #8c5b6f, #5c4050);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
     @media (max-width: 600px) {
       .page { padding: 28px 0; width: 94%; }
       .card {
@@ -327,14 +382,20 @@
       .message { font-size: 15px; }
       .dua { padding: 18px 14px; }
       .signature { right: 15px; bottom: 12px; }
+      .btn-group { flex-direction: column; width: 100%; }
+      .wish-btn { width: 100%; }
     }
   </style>
 </head>
 
 <body>
+  <!-- অডিও ফাইলের নাম এখানে যুক্ত করা হয়েছে -->
+  <audio id="bg-music" src="Your_Eyes(256k).mp3" loop preload="auto"></audio>
+
   <div class="glow"></div>
 
-  <main class="page">
+  <!-- প্রথম পেজ -->
+  <main class="page" id="mainPage">
     <section class="card">
       <div class="eyebrow">A little celebration of you</div>
 
@@ -350,7 +411,7 @@
       </div>
 
       <p class="message">
-     Happy Birthday, 
+      Happy Birthday, 
       my dearest Nausin. 
       On this beautiful day, I pray that Allah blesses you with a long, healthy, and joyful life. 
       May He protect you from every hardship, fill your days with peace, and guide you toward endless happiness and success.
@@ -368,39 +429,59 @@
       </p>
 
       <div class="dua">
-        <p class="arabic">
-          🌷
-        </p>
+        <p class="arabic">🌷</p>
         <p class="meaning">
           Bby, tumi amar sobcheye favourite person, amar sobcheye priyo manush. ❤️ Tumi shudhu amar ajker valobasha na, ami chai tumi amar puro jiboner shongi hoye thako।
-Aj tomar birthday… amar ektai mon theke chawa _tumi jeno amar cheye onek beshi bochor bacho, sustho thako, sobsomoy hashikhushi thako. 🥺💗 Kintu er pasapashi amar arekta iccha ache—amra jeno ekshathe onekta poth pari dite pari।
-Ekshathe boro hobo, ekshathe buro hobo, ekshathe jiboner shundor muhurto-gulo dekhe jabo। Tomar chuler rong bodle jabe, amar mukhe boyosher chap porbe—tobuo ami chai, tokhono tomar hat ta amar hate thakuk। 🌷
-Jiboner shesh boyoshe giyeo jeno tomake dekhe mone hoy, Ei manush-takei to ami amar puro jibonta cheyechilam...
-Tomar protita birthday te ami thakte cai, tomar protita shopno puron hote dekhte chai, ar sesh porjonto tomar pashe bose bolte chai_ Dekho, amra perechi… sotti  eksathe eto dur eshechi.🫶🏻
-Happy Birthday, Bby. 🎂🌸
-Tomake aj, kal, agami bochor—na, amar puro jibonta valobashte chai. ❤️
+          Aj tomar birthday… amar ektai mon theke chawa _tumi jeno amar cheye onek beshi bochor bacho, sustho thako, sobsomoy hashikhushi thako. 🥺💗 Kintu er pasapashi amar arekta iccha ache—amra jeno ekshathe onekta poth pari dite pari।
+          Ekshathe boro hobo, ekshathe buro hobo, ekshathe jiboner shundor muhurto-gulo dekhe jabo। Tomar chuler rong bodle jabe, amar mukhe boyosher chap porbe—tobuo ami chai, tokhono tomar hat ta amar hate thakuk। 🌷
+          Jiboner shesh boyoshe giyeo jeno tomake dekhe mone hoy, Ei manush-takei to ami amar puro jibonta cheyechilam...
+          Tomar protita birthday te ami thakte cai, tomar protita shopno puron hote dekhte chai, ar sesh porjonto tomar pashe bose bolte chai_ Dekho, amra perechi… sotti  eksathe eto dur eshechi.🫶🏻
+          Happy Birthday, Bby. 🎂🌸
+          Tomake aj, kal, agami bochor—na, amar puro jibonta valobashte chai. ❤️
         </p>
       </div>
 
-      <button class="wish-btn" id="wishBtn">✨ i love you my nusun rabbit </button>
+      <div class="btn-group">
+        <button class="wish-btn" id="wishBtn">✨ i love you my nusun rabbit </button>
+        <button class="wish-btn" id="galleryBtn">🎵 আমাদের স্মৃতিগুলো দেখো</button>
+      </div>
 
       <div class="secret" id="secret">
         Make a beautiful wish... 🌸<br>
         And may every little dream in your heart find its way to you. 💗
       </div>
 
-      <div class="signature">Sorry, my beloved.
-I couldn’t do anything for you. I’m truly sorry.
-I just wish I could have done something to make you happy. ❤️
-
-Yours,
-Soccho</div>
+      <div class="signature">Sorry, my beloved.<br>
+      I couldn’t do anything for you. I’m truly sorry.<br>
+      I just wish I could have done something to make you happy. ❤️<br><br>
+      Yours,<br>Soccho</div>
     </section>
   </main>
 
-  <script>
-    const symbols = ["🌸","🌷","🌻", "♡", "♥", "✿"];
+  <!-- দ্বিতীয় পেজ (গ্যালারি) -->
+  <div class="gallery-page" id="galleryPage">
+    <div class="slideshow-container" id="slidesContainer">
+      <img class="slide active" src="1789364751594.jpg" alt="Memory 1">
+      <img class="slide" src="1789364775065.jpg" alt="Memory 2">
+      <img class="slide" src="1789364744374.jpg" alt="Memory 3">
+      <img class="slide" src="1789364757861.jpg" alt="Memory 4">
+      <img class="slide" src="1789364763659.jpg" alt="Memory 5">
+      <img class="slide" src="1789364766860.jpg" alt="Memory 6">
+      <img class="slide" src="1789364778390.jpg" alt="Memory 7">
+      <img class="slide" src="IMG_20260914_114644_095.jpg" alt="Memory 8">
+      <img class="slide" src="IMG_20260914_114649_679.jpg" alt="Memory 9">
+      <img class="slide" src="IMG_20260914_114658_439.jpg" alt="Memory 10">
+      <img class="slide" src="IMG_20260914_114701_695.jpg" alt="Memory 11">
+      <img class="slide" src="IMG_20260914_114703_420.jpg" alt="Memory 12">
+      <img class="slide" src="IMG_20260914_114705_895.jpg" alt="Memory 13">
+      <img class="slide" src="IMG_20260914_114707_637.jpg" alt="Memory 14">
+    </div>
+    <button class="wish-btn back-btn" id="backBtn">ফিরে যাও</button>
+  </div>
 
+  <script>
+    // --- ফুল/হার্ট পড়ার এনিমেশন (সব পেজেই পড়বে) ---
+    const symbols = ["🌸","🌷","🌻", "♡", "♥", "✿"];
     function createPetal(extra = false) {
       const petal = document.createElement("span");
       petal.className = "petal";
@@ -417,26 +498,56 @@ Soccho</div>
       petal.style.opacity = 0.5 + Math.random() * 0.4;
 
       document.body.appendChild(petal);
-
       setTimeout(() => petal.remove(), duration * 1000 + 500);
     }
-
-    // Gentle automatic cherry-blossom/petal effect
+    
     setInterval(() => createPetal(), 650);
+    for (let i = 0; i < 8; i++) {
+      setTimeout(() => createPetal(), i * 180);
+    }
 
-    // A little extra magic when "Make a Wish" is pressed
     document.getElementById("wishBtn").addEventListener("click", () => {
       document.getElementById("secret").classList.add("show");
-
       for (let i = 0; i < 28; i++) {
         setTimeout(() => createPetal(true), i * 45);
       }
     });
 
-    // Small initial burst
-    for (let i = 0; i < 8; i++) {
-      setTimeout(() => createPetal(), i * 180);
+    // --- গ্যালারি ও অডিও প্লেয়ারের কাজ ---
+    const mainPage = document.getElementById('mainPage');
+    const galleryPage = document.getElementById('galleryPage');
+    const galleryBtn = document.getElementById('galleryBtn');
+    const backBtn = document.getElementById('backBtn');
+    const bgMusic = document.getElementById('bg-music');
+    let slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function startSlideshow() {
+      if(slides.length === 0) return;
+      slides[currentSlide].classList.add('active');
+      slideInterval = setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }, 3500); 
     }
+
+    galleryBtn.addEventListener('click', () => {
+      mainPage.style.display = 'none';
+      galleryPage.style.display = 'flex';
+      
+      bgMusic.play().catch(error => console.log("Audio play failed:", error));
+      startSlideshow();
+    });
+
+    backBtn.addEventListener('click', () => {
+      galleryPage.style.display = 'none';
+      mainPage.style.display = 'flex';
+      
+      bgMusic.pause();
+      clearInterval(slideInterval);
+    });
   </script>
 </body>
 </html>

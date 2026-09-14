@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8c8d8">
+  <meta name="description" content="A little birthday celebration of Tahmina Nausin.">
+  <title>Happy 15th Birthday, Tahmina Nausin 💗</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #f4a9c4;
+      --pink-deep: #e982aa;
+      --pink-soft: #fff1f6;
+      --rose-gold: #c9859e;
+      --text: #5c4050;
+      --white: rgba(255,255,255,.78);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(255,255,255,.95), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(255,194,216,.48), transparent 32%),
+        radial-gradient(circle at 50% 90%, rgba(248,184,207,.35), transparent 40%),
+        linear-gradient(135deg, #fff8fb 0%, #fde8f0 48%, #fff5f8 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(120deg, rgba(255,255,255,.3), transparent 45%, rgba(255,255,255,.2));
+      z-index: 0;
+    }
+
+    .glow {
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: rgba(255,182,207,.20);
+      filter: blur(70px);
+      pointer-events: none;
+      z-index: 0;
+      top: -90px;
+      right: -90px;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(920px, 92%);
+      margin: auto;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 70px 0;
+      transition: opacity .5s ease;
+    }
+
+    .card {
+      width: 100%;
+      text-align: center;
+      padding: 58px 30px 46px;
+      border: 1px solid rgba(255,255,255,.8);
+      background: var(--white);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 34px;
+      box-shadow: 0 25px 70px rgba(174,102,128,.16);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 1px solid rgba(233,130,170,.12);
+      top: -145px;
+      left: -100px;
+    }
+
+    .eyebrow {
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--rose-gold);
+      margin-bottom: 13px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.02;
+      margin: 0;
+      color: #70475a;
+      font-weight: 700;
+    }
+
+    .name {
+      margin: 13px 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(28px, 5vw, 46px);
+      color: var(--pink-deep);
+    }
+
+    .date {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 17px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.76);
+      border: 1px solid rgba(233,130,170,.20);
+      color: #946276;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+
+    .photo-wrap {
+      width: 190px;
+      height: 190px;
+      margin: 0 auto 30px;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .photo-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      padding: 5px;
+      background: conic-gradient(
+        from 0deg,
+        #fff 0deg,
+        #f1a2be 80deg,
+        #fff 155deg,
+        #d98ca8 240deg,
+        #fff 315deg,
+        #f1a2be 360deg
+      );
+      animation: spin 13s linear infinite;
+      box-shadow: 0 12px 35px rgba(210,114,147,.20);
+    }
+
+    .photo-ring::after {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-radius: 50%;
+      background: #fff7fa;
+    }
+
+    .photo {
+      position: relative;
+      z-index: 2;
+      width: 166px;
+      height: 166px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 4px solid rgba(255,255,255,.95);
+      box-shadow: 0 10px 30px rgba(140,72,98,.18);
+      background: #f9d9e5;
+    }
+
+    .heart-badge {
+      position: absolute;
+      z-index: 4;
+      right: -1px;
+      bottom: 8px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.95);
+      box-shadow: 0 8px 20px rgba(141,75,101,.15);
+      font-size: 19px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .message {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.9;
+      color: #745666;
+    }
+
+    .dua {
+      margin: 28px auto 0;
+      max-width: 680px;
+      padding: 22px 20px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(255,255,255,.75), rgba(255,226,237,.5));
+      border: 1px solid rgba(218,132,160,.18);
+    }
+
+    .arabic {
+      font-size: clamp(20px, 3vw, 28px);
+      line-height: 1.9;
+      direction: rtl;
+      color: #714759;
+      margin: 0 0 8px;
+      font-family: serif;
+    }
+
+    .meaning {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #8a6473;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 29px;
+    }
+
+    .wish-btn {
+      border: 0;
+      cursor: pointer;
+      color: white;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 23px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ed91b2, #c9859e);
+      box-shadow: 0 12px 25px rgba(201,133,158,.25);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .wish-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 16px 30px rgba(201,133,158,.32);
+    }
+
+    .wish-btn:active {
+      transform: scale(.97);
+    }
+
+    .secret {
+      max-width: 580px;
+      margin: 18px auto 0;
+      opacity: 0;
+      transform: translateY(8px);
+      max-height: 0;
+      overflow: hidden;
+      transition: all .7s ease;
+      color: #87566a;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .secret.show {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: 180px;
+    }
+
+    .signature {
+      position: relative;
+      right: auto;
+      bottom: auto;
+      z-index: 2;
+      margin: 30px 4px 0;
+      padding-top: 10px;
+      font-size: 10px;
+      line-height: 1.55;
+      color: rgba(111,69,87,.52);
+      letter-spacing: .05em;
+      user-select: none;
+      text-align: right;
+    }
+
+    /* Falling petals */
+    .petal {
+      position: fixed;
+      top: -35px;
+      z-index: 9999;
+      pointer-events: none;
+      user-select: none;
+      animation: fall linear forwards;
+      will-change: transform, opacity;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translate3d(0,-30px,0) rotate(0deg);
+        opacity: 0;
+      }
+      10% { opacity: .9; }
+      50% {
+        transform: translate3d(var(--drift),52vh,0) rotate(170deg);
+        opacity: .85;
+      }
+      100% {
+        transform: translate3d(calc(var(--drift) * -.6),110vh,0) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       BEAUTIFUL MEMORY GALLERY
+       ========================= */
+    .gallery-page {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(119,69,89,.22), transparent 35%),
+        linear-gradient(145deg, #1b1117, #2b1721 55%, #140d12);
+      z-index: 100;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .gallery-page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 15% 75%, rgba(244,169,196,.10), transparent 28%),
+        radial-gradient(circle at 85% 25%, rgba(255,255,255,.06), transparent 25%);
+    }
+
+    .gallery-top {
+      width: min(900px, 100%);
+      position: relative;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 14px;
+    }
+
+    .gallery-title {
+      color: rgba(255,255,255,.94);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(20px, 4vw, 31px);
+      margin: 0;
+      text-shadow: 0 4px 20px rgba(0,0,0,.3);
+    }
+
+    .counter {
+      flex-shrink: 0;
+      color: rgba(255,255,255,.85);
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: 13px;
+      font-weight: 700;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .slideshow-container {
+      position: relative;
+      z-index: 2;
+      width: min(900px, 100%);
+      height: min(72vh, 690px);
+      min-height: 330px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1200px;
+      touch-action: pan-y;
+      user-select: none;
+    }
+
+    .slide-frame {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(.94) translateY(10px);
+      transition:
+        opacity .7s ease,
+        transform .8s cubic-bezier(.2,.75,.25,1),
+        visibility .7s ease;
+    }
+
+    .slide-frame.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1) translateY(0);
+    }
+
+    .slide-frame img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow:
+        0 25px 70px rgba(0,0,0,.55),
+        0 0 0 8px rgba(255,255,255,.025);
+      background: rgba(255,255,255,.035);
+    }
+
+    .slide-frame::after {
+      content: "";
+      position: absolute;
+      width: 65%;
+      height: 20%;
+      bottom: 4%;
+      background: rgba(0,0,0,.35);
+      filter: blur(35px);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .nav-btn {
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.17);
+      color: white;
+      background: rgba(255,255,255,.10);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      cursor: pointer;
+      font-size: 25px;
+      display: grid;
+      place-items: center;
+      transition: transform .2s ease, background .2s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-50%) scale(1.08);
+      background: rgba(255,255,255,.17);
+    }
+
+    .nav-btn:active {
+      transform: translateY(-50%) scale(.94);
+    }
+
+    .prev-btn { left: 8px; }
+    .next-btn { right: 8px; }
+
+    .gallery-bottom {
+      position: relative;
+      z-index: 4;
+      width: min(900px, 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 13px;
+      margin-top: 13px;
+    }
+
+    .progress {
+      width: min(420px, 72%);
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #f4a9c4, #fff);
+      transition: width .5s ease;
+    }
+
+    .gallery-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .control-btn {
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.92);
+      background: rgba(255,255,255,.09);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font: 600 13px "DM Sans", sans-serif;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .control-btn:hover {
+      background: rgba(255,255,255,.15);
+      transform: translateY(-1px);
+    }
+
+    .back-btn {
+      background: linear-gradient(135deg, #8c5b6f, #5c4050);
+      box-shadow: 0 8px 20px rgba(0,0,0,.3);
+    }
+
+    .gallery-hint {
+      color: rgba(255,255,255,.48);
+      font-size: 11px;
+      letter-spacing: .03em;
+      text-align: center;
+    }
+
+    /* Reduce motion when requested by the device */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .gallery-page {
+        padding: 14px;
+      }
+
+      .gallery-top {
+        margin-bottom: 8px;
+      }
+
+      .slideshow-container {
+        height: 67vh;
+        min-height: 300px;
+      }
+
+      .nav-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 22px;
+      }
+
+      .prev-btn { left: 2px; }
+      .next-btn { right: 2px; }
+
+      .slide-frame img {
+        max-width: calc(100% - 36px);
+        max-height: 100%;
+        border-radius: 15px;
+      }
+
+      .gallery-bottom {
+        margin-top: 6px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 28px 0; width: 94%; }
+
+      .card {
+        padding: 42px 18px 45px;
+        border-radius: 26px;
+      }
+
+      .photo-wrap { width: 165px; height: 165px; }
+      .photo { width: 143px; height: 143px; }
+      .heart-badge { right: -3px; bottom: 5px; }
+      .message { font-size: 15px; }
+      .dua { padding: 18px 14px; }
+      .signature {
+        margin: 28px 2px 0;
+        font-size: 9px;
+      }
+
+      .btn-group {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .wish-btn { width: 100%; }
+
+      .gallery-title {
+        font-size: 21px;
+      }
+
+      .counter {
+        font-size: 12px;
+        padding: 7px 10px;
+      }
+
+      .gallery-hint {
+        font-size: 10px;
+      }
+    }
+
+    @media (max-height: 600px) and (orientation: landscape) {
+      .gallery-page {
+        padding: 10px 20px;
+      }
+
+      .gallery-top {
+        margin-bottom: 3px;
+      }
+
+      .slideshow-container {
+        height: 68vh;
+      }
+
+      .gallery-bottom {
+        margin-top: 3px;
+        gap: 7px;
+      }
+
+      .gallery-hint {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Background music -->
+  <audio id="bg-music" src="Your_Eyes(256k).mp3" loop preload="auto"></audio>
+
+  <div class="glow"></div>
+
+  <!-- FIRST PAGE -->
+  <main class="page" id="mainPage">
+    <section class="card">
+      <div class="eyebrow">A little celebration of you</div>
+
+      <h1>Happy 15th Birthday</h1>
+      <div class="name">Tahmina Nausin</div>
+
+      <div class="date">15 September · For You, With Love 💗</div>
+
+      <div class="photo-wrap">
+        <div class="photo-ring"></div>
+        <img class="photo" src="tahmina.jpg" alt="Tahmina Nowshin">
+        <div class="heart-badge">♡</div>
+      </div>
+
+      <p class="message">
+        Happy Birthday,
+        my dearest Nausin.
+        On this beautiful day, I pray that Allah blesses you with a long, healthy, and joyful life.
+        May He protect you from every hardship, fill your days with peace, and guide you toward endless happiness and success.
+        May all your dreams come true, and may every goal you work for become a beautiful reality.
+        I hope this new year of your life brings countless opportunities, unforgettable moments, and reasons to smile every single day.
+        Thank you for being such a wonderful part of my life.
+        Your presence means more to me than words can ever express.
+        I sincerely pray we stay together through every season of life, supporting and loving each other, growing old side by side until our very last breath.
+        No matter where life takes us, I promise to always cherish you, respect you, and stand by your side.
+        You deserve all the love, happiness, and blessings this world has to offer.
+        Happy Birthday once again, my love.
+        May Allah accept all your prayers, grant you endless success, and keep your beautiful smile shining forever.
+
+        Forever yours, Soccho 🌸
+      </p>
+
+      <div class="dua">
+        <p class="arabic">🌷</p>
+        <p class="meaning">
+          Bby, tumi amar sobcheye favourite person, amar sobcheye priyo manush. ❤️
+          Tumi shudhu amar ajker valobasha na, ami chai tumi amar puro jiboner shongi hoye thako।
+          Aj tomar birthday… amar ektai mon theke chawa _tumi jeno amar cheye onek beshi bochor bacho, sustho thako, sobsomoy hashikhushi thako. 🥺💗
+          Kintu er pasapashi amar arekta iccha ache—amra jeno ekshathe onekta poth pari dite pari।
+          Ekshathe boro hobo, ekshathe buro hobo, ekshathe jiboner shundor muhurto-gulo dekhe jabo।
+          Tomar chuler rong bodle jabe, amar mukhe boyosher chap porbe—tobuo ami chai, tokhono tomar hat ta amar hate thakuk। 🌷
+          Jiboner shesh boyoshe giyeo jeno tomake dekhe mone hoy, Ei manush-takei to ami amar puro jibonta cheyechilam...
+          Tomar protita birthday te ami thakte cai, tomar protita shopno puron hote dekhte chai, ar sesh porjonto tomar pashe bose bolte chai_ Dekho, amra perechi… sotti eksathe eto dur eshechi.🫶🏻
+          Happy Birthday, Bby. 🎂🌸
+          Tomake aj, kal, agami bochor—na, amar puro jibonta valobashte chai. ❤️
+        </p>
+      </div>
+
+      <div class="btn-group">
+        <button class="wish-btn" id="wishBtn">✨ i love you my nusun rabbit</button>
+        <button class="wish-btn" id="galleryBtn">🎵 bby tomar kisu pic dekho 🙃</button>
+      </div>
+
+      <div class="secret" id="secret">
+        Make a beautiful wish... 🌸<br>
+        And may every little dream in your heart find its way to you. 💗
+      </div>
+
+      <div class="signature">
+        Sorry, my beloved.<br>
+        I couldn’t do anything for you. I’m truly sorry.<br>
+        I just wish I could have done something to make you happy. ❤️<br><br>
+        Yours,<br>Soccho
+      </div>
+    </section>
+  </main>
+
+  <!-- SECOND PAGE: 42-MEMORY ANIMATED GALLERY -->
+  <div class="gallery-page" id="galleryPage" aria-hidden="true">
+
+    <div class="gallery-top">
+      <h2 class="gallery-title">Our Little Memories 💗</h2>
+      <div class="counter" id="counter">Memory 1 / 42</div>
+    </div>
+
+    <div class="slideshow-container" id="slidesContainer">
+
+      <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous memory">‹</button>
+
+      <div class="slide-frame active">
+        <img src="1789364751594.jpg" alt="Memory 1">
+      </div>
+      <div class="slide-frame">
+        <img src="1789364775065.jpg" alt="Memory 2">
+      </div>
+      <div class="slide-frame">
+        <img src="1789364744374.jpg" alt="Memory 3">
+      </div>
+      <div class="slide-frame">
+        <img src="1789364757861.jpg" alt="Memory 4">
+      </div>
+      <div class="slide-frame">
+        <img src="1789364763659.jpg" alt="Memory 5">
+      </div>
+      <div class="slide-frame">
+        <img src="1789364766860.jpg" alt="Memory 6">
+      </div>
+      <div class="slide-frame">
+        <img src="1789364778390.jpg" alt="Memory 7">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_114644_095.jpg" alt="Memory 8">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_114649_679.jpg" alt="Memory 9">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_114658_439.jpg" alt="Memory 10">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_114701_695.jpg" alt="Memory 11">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_114703_420.jpg" alt="Memory 12">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_114705_895.jpg" alt="Memory 13">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_114707_637.jpg" alt="Memory 14">
+      </div>
+
+      <div class="slide-frame">
+        <img src="IMG_20260914_183543_112.jpg" alt="Memory 15">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_183511_237.jpg" alt="Memory 16">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_183359_439.jpg" alt="Memory 17">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_183345_352.jpg" alt="Memory 18">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_183343_130.jpg" alt="Memory 19">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_183255_813.jpg" alt="Memory 20">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_183200_890.jpg" alt="Memory 21">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_183156_629.jpg" alt="Memory 22">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_183154_056.jpg" alt="Memory 23">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_183045_759.jpg" alt="Memory 24">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_183043_205.jpg" alt="Memory 25">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_183039_992.jpg" alt="Memory 26">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_183037_274.jpg" alt="Memory 27">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_183035_302.jpg" alt="Memory 28">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182951_941.jpg" alt="Memory 29">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182924_795.jpg" alt="Memory 30">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182832_519.jpg" alt="Memory 31">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182732_742.jpg" alt="Memory 32">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182704_289.jpg" alt="Memory 33">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182647_831.jpg" alt="Memory 34">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182558_800.jpg" alt="Memory 35">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182527_947.jpg" alt="Memory 36">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182526_025.jpg" alt="Memory 37">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182523_887.jpg" alt="Memory 38">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182521_210.jpg" alt="Memory 39">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182407_500.jpg" alt="Memory 40">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182349_122.jpg" alt="Memory 41">
+      </div>
+      <div class="slide-frame">
+        <img src="IMG_20260914_182347_242.jpg" alt="Memory 42">
+      </div>
+
+      <button class="nav-btn next-btn" id="nextBtn" aria-label="Next memory">›</button>
+    </div>
+
+    <div class="gallery-bottom">
+      <div class="progress" aria-hidden="true">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="gallery-controls">
+        <button class="control-btn" id="pauseBtn">⏸ Pause</button>
+        <button class="control-btn back-btn" id="backBtn">♡ Back to birthday</button>
+      </div>
+
+      <div class="gallery-hint">
+        Swipe on phone · Use ← → on keyboard · Auto changes every 4 seconds
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================
+    // FALLING FLOWERS / HEARTS
+    // =========================
+    const symbols = ["🌸", "🌷", "🌻", "♡", "♥", "✿"];
+
+    function createPetal() {
+      const petal = document.createElement("span");
+      petal.className = "petal";
+      petal.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+      const size = 12 + Math.random() * 17;
+      const duration = 5 + Math.random() * 6;
+      const drift = (Math.random() * 180 - 90) + "px";
+
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.fontSize = size + "px";
+      petal.style.setProperty("--drift", drift);
+      petal.style.animationDuration = duration + "s";
+      petal.style.opacity = 0.5 + Math.random() * 0.4;
+
+      document.body.appendChild(petal);
+
+      setTimeout(() => petal.remove(), duration * 1000 + 500);
+    }
+
+    setInterval(createPetal, 650);
+
+    for (let i = 0; i < 8; i++) {
+      setTimeout(createPetal, i * 180);
+    }
+
+    // =========================
+    // WISH BUTTON
+    // =========================
+    document.getElementById("wishBtn").addEventListener("click", () => {
+      document.getElementById("secret").classList.add("show");
+
+      for (let i = 0; i < 28; i++) {
+        setTimeout(createPetal, i * 45);
+      }
+    });
+
+    // =========================
+    // GALLERY + MUSIC
+    // =========================
+    const mainPage = document.getElementById("mainPage");
+    const galleryPage = document.getElementById("galleryPage");
+    const galleryBtn = document.getElementById("galleryBtn");
+    const backBtn = document.getElementById("backBtn");
+    const bgMusic = document.getElementById("bg-music");
+
+    const frames = Array.from(document.querySelectorAll(".slide-frame"));
+    const container = document.getElementById("slidesContainer");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const pauseBtn = document.getElementById("pauseBtn");
+    const counter = document.getElementById("counter");
+    const progressFill = document.getElementById("progressFill");
+
+    let currentSlide = 0;
+    let slideInterval = null;
+    let isPaused = false;
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    function updateGallery() {
+      frames.forEach((frame, index) => {
+        frame.classList.toggle("active", index === currentSlide);
+      });
+
+      counter.textContent = `Memory ${currentSlide + 1} / ${frames.length}`;
+      progressFill.style.width =
+        `${((currentSlide + 1) / frames.length) * 100}%`;
+    }
+
+    function goToSlide(index) {
+      currentSlide = (index + frames.length) % frames.length;
+      updateGallery();
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function previousSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    function startSlideshow() {
+      clearInterval(slideInterval);
+
+      if (!isPaused) {
+        slideInterval = setInterval(nextSlide, 4000);
+      }
+    }
+
+    function stopSlideshow() {
+      clearInterval(slideInterval);
+      slideInterval = null;
+    }
+
+    function openGallery() {
+      mainPage.style.display = "none";
+      galleryPage.style.display = "flex";
+      galleryPage.setAttribute("aria-hidden", "false");
+
+      currentSlide = 0;
+      isPaused = false;
+      pauseBtn.textContent = "⏸ Pause";
+      updateGallery();
+      startSlideshow();
+
+      // Browser policies may block autoplay until user interaction.
+      bgMusic.play().catch(() => {});
+    }
+
+    function closeGallery() {
+      stopSlideshow();
+
+      galleryPage.style.display = "none";
+      galleryPage.setAttribute("aria-hidden", "true");
+      mainPage.style.display = "flex";
+
+      bgMusic.pause();
+    }
+
+    galleryBtn.addEventListener("click", openGallery);
+    backBtn.addEventListener("click", closeGallery);
+
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      if (!isPaused) startSlideshow();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      previousSlide();
+      if (!isPaused) startSlideshow();
+    });
+
+    pauseBtn.addEventListener("click", () => {
+      isPaused = !isPaused;
+
+      if (isPaused) {
+        stopSlideshow();
+        pauseBtn.textContent = "▶ Play";
+      } else {
+        pauseBtn.textContent = "⏸ Pause";
+        startSlideshow();
+      }
+    });
+
+    // =========================
+    // KEYBOARD CONTROLS - PC/MAC
+    // =========================
+    document.addEventListener("keydown", (event) => {
+      if (galleryPage.style.display !== "flex") return;
+
+      if (event.key === "ArrowRight") {
+        nextSlide();
+        if (!isPaused) startSlideshow();
+      }
+
+      if (event.key === "ArrowLeft") {
+        previousSlide();
+        if (!isPaused) startSlideshow();
+      }
+
+      if (event.key === " ") {
+        event.preventDefault();
+        pauseBtn.click();
+      }
+
+      if (event.key === "Escape") {
+        closeGallery();
+      }
+    });
+
+    // =========================
+    // TOUCH SWIPE - ANDROID/iPHONE
+    // =========================
+    container.addEventListener("touchstart", (event) => {
+      const touch = event.changedTouches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    }, { passive: true });
+
+    container.addEventListener("touchend", (event) => {
+      const touch = event.changedTouches[0];
+
+      const deltaX = touch.clientX - touchStartX;
+      const deltaY = touch.clientY - touchStartY;
+
+      // Only treat mostly-horizontal gestures as a slide swipe.
+      if (Math.abs(deltaX) < 45 || Math.abs(deltaX) < Math.abs(deltaY)) {
+        return;
+      }
+
+      if (deltaX < 0) {
+        nextSlide();
+      } else {
+        previousSlide();
+      }
+
+      if (!isPaused) startSlideshow();
+    }, { passive: true });
+
+    // Pause auto-slide while the pointer is over the gallery image area.
+    // This makes it easier to inspect a photo on desktop.
+    container.addEventListener("mouseenter", () => {
+      if (!isPaused) stopSlideshow();
+    });
+
+    container.addEventListener("mouseleave", () => {
+      if (!isPaused && galleryPage.style.display === "flex") {
+        startSlideshow();
+      }
+    });
+
+    // Initialize.
+    updateGallery();
+  </script>
+</body>
+</html>
